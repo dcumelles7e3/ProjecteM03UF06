@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Inici Aplicació</title>
+</head>
+<body>
+<a href="/empleats/new">Afegir empleats</a><br/>
+<a href="/empleats/list">Llistar empleats </a><br/>
+<a href="/empleats/listord">Llistar empleats per ordre alfabètic</a><br/>
+<form action="/empleats/consultaid" method="get">
+    <label> Consultar amb id
+        <input type="number" name="id" />
+    </label>
+</form>
+
+</body>
+</html>

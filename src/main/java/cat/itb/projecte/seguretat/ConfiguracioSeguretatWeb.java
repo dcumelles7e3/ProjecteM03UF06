@@ -14,12 +14,9 @@ public class ConfiguracioSeguretatWeb extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth
-                .inMemoryAuthentication()
-                .passwordEncoder(new BCryptPasswordEncoder())
-                .withUser("Daidis")
-                .password("ekisde")
-                .roles("admin");
+        auth.userDetailsService(userDetailsService())
+                .passwordEncoder(new BCryptPasswordEncoder());
+
     }
 
     @Override
