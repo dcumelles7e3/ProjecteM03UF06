@@ -1,6 +1,9 @@
 package cat.itb.projecte.model.serveis;
 
+import cat.itb.projecte.model.entitats.Empleat;
 import cat.itb.projecte.model.entitats.Usuari;
+import org.springframework.context.annotation.Bean;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
@@ -20,10 +23,18 @@ public class ServeiUsuaris {
 
     @PostConstruct
     public void init() {
-        repositori.add(
-                        new Usuari("daidis","ekisde","admin")
+
+        repositori.addAll(
+                Arrays.asList(
+                        new Usuari("daidis", "ekisde","admin"),
+                        new Usuari("montse", "montse","admin"),
+                        new Usuari("user", "user")
+                )
         );
     }
+
+
+
     public Usuari consultaPerId(String s) {
         for (Usuari usuari : repositori) {
             if (usuari.getUsername().equals(s)){

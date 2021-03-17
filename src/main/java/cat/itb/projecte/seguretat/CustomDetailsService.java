@@ -22,7 +22,7 @@ public class CustomDetailsService implements UserDetailsService {
             builder=User.withUsername(s);
             builder.disabled(false);
             builder.password(u.getPassword());
-            builder.authorities(new SimpleGrantedAuthority("ROLE_USER"));
+            builder.roles(u.getRol());
         }
         else throw new UsernameNotFoundException("Usuari no trobat");
         return builder.build();

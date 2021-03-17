@@ -1,5 +1,7 @@
 package cat.itb.projecte.seguretat;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -11,11 +13,13 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 @EnableWebSecurity
 public class ConfiguracioSeguretatWeb extends WebSecurityConfigurerAdapter {
 
+    @Autowired
+    private CustomDetailsService userDetailsService;
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.userDetailsService(userDetailsService())
-                .passwordEncoder(new BCryptPasswordEncoder());
+        auth.userDetailsService(userDetailsService)
+                .passwordEncoder(passwordEncoder());
 
     }
 
@@ -23,7 +27,8 @@ public class ConfiguracioSeguretatWeb extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()
-                .antMatchers("/", "/inici").permitAll()
+                .antMatchers("/", "/inici", "/registre","/llistat").permitAll()
+                .antMatchers("/empleats/new","/empleats/eliminar").hasRole("admin")
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
@@ -32,6 +37,10 @@ public class ConfiguracioSeguretatWeb extends WebSecurityConfigurerAdapter {
                 .and()
                 .logout()
                 .permitAll();
+    }
 
+    @Bean
+    public BCryptPasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
     }
 }

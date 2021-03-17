@@ -18,5 +18,8 @@
     Directiu <input type="checkbox" id="directiu" th:field="*{directiu}"><br/>
     <button type="submit">Enviar</button>
 </form>
+<form th:action="@{/logout}" method="post">
+    <input type="submit" value="Sortir (Sign Out)"/>
+</form>
 </body>
 </html>
