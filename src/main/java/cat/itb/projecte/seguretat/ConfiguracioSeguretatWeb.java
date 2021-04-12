@@ -27,7 +27,7 @@ public class ConfiguracioSeguretatWeb extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()
-                .antMatchers("/", "/inici", "/registre","/llistat").permitAll()
+                .antMatchers("/", "/inici", "/h2-console/**", "/registre","/llistat").permitAll()
                 .antMatchers("/empleats/new","/empleats/eliminar").hasRole("admin")
                 .anyRequest().authenticated()
                 .and()
@@ -37,6 +37,8 @@ public class ConfiguracioSeguretatWeb extends WebSecurityConfigurerAdapter {
                 .and()
                 .logout()
                 .permitAll();
+        http.csrf().disable(); //per h2-console
+        http.headers().frameOptions().disable();
     }
 
     @Bean

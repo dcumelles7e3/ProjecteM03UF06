@@ -5,11 +5,17 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
 @Data
+@Entity
 public class Usuari{
+    @Id
     private String username;
     private String password;
-    private String rol; //"USER" o "ADMIN"
+    private String rol;
 
     public Usuari() {
         rol = "user";
@@ -30,4 +36,5 @@ public class Usuari{
         this.password = new BCryptPasswordEncoder().encode(password);;
         this.rol = rol;
     }
+
 }

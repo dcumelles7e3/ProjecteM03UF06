@@ -1,25 +1,25 @@
 package cat.itb.projecte.model.serveis;
 
+import cat.itb.projecte.model.entitats.Carta;
 import cat.itb.projecte.model.entitats.Usuari;
+import cat.itb.projecte.repositoris.RepositoriCartes;
 import cat.itb.projecte.repositoris.RepositoriUsuaris;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 @Service
-public class ServeiUsuaris {
+public class ServeiCartes {
     @Autowired
-    private RepositoriUsuaris repositori;
+    private RepositoriCartes repositori;
 
-    public void afegir(Usuari e) {
-        repositori.save(e);
+    public void afegir(Carta c) {
+        repositori.save(c);
     }
 
-    public Iterable<Usuari> llistat() {
+    public Iterable<Carta> llistat() {
         return repositori.findAll();
     }
 
@@ -30,11 +30,11 @@ public class ServeiUsuaris {
                 new Usuari("montse", "montse", "admin"),
                 new Usuari("user", "user")
         );
-        repositori.saveAll(inicials);
+       // repositori.saveAll(inicials);
     }
 
-    public Usuari findById(String username) {
+ /*   public Usuari findById(String username) {
         return repositori.findById(username).orElse(null);
-    }
+    }*/
 
 }
