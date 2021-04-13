@@ -28,7 +28,7 @@ public class ConfiguracioSeguretatWeb extends WebSecurityConfigurerAdapter {
         http
                 .authorizeRequests()
                 .antMatchers("/", "/inici", "/h2-console/**", "/registre","/llistat").permitAll()
-                .antMatchers("/empleats/new","/empleats/eliminar").hasRole("admin")
+                .antMatchers("/cartes/new","/cartes/eliminar").hasRole("admin")
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
