@@ -22,11 +22,11 @@
     <tbody>
     <tr th:each="carta : ${llistaCartes}">
         <td th:text="${carta.id}">ID</td>
-        <td th:text="${carta.nom}">Pepe Pérez</td>
-        <td th:text="${carta.atk}">pepe.perez@ole.com</td>
-        <td th:text="${carta.hp}">123456789</td>
-        <td th:text="${carta.desc}">es o no es</td>
-        <td th:text="${carta.expansio.nom}">es o no es</td>
+        <td th:text="${carta.nom}">Nom de la carta</td>
+        <td th:text="${carta.atk}">Valor d'atac</td>
+        <td th:text="${carta.hp}">Valor vida</td>
+        <td th:text="${carta.desc}">Descripció</td>
+        <td th:text="${carta.expansio.nom}">Expansió</td>
         <td><a th:href="@{/cartes/edit/{id}(id=${carta.id})}">Editar</a> </td>
         <td><a th:href="@{/cartes/eliminar(id=${carta.id})}">Eliminar</a> </td><br/>
 
@@ -36,6 +36,6 @@
 <form th:action="@{/logout}" method="post">
     <input type="submit" value="Sortir (Sign Out)"/>
 </form>
-
+<a href="/">Tornar a l'inici</a><br/>
 </body>
 </html>

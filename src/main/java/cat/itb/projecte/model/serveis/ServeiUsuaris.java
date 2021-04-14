@@ -19,10 +19,6 @@ public class ServeiUsuaris {
         repositori.save(e);
     }
 
-    public Iterable<Usuari> llistat() {
-        return repositori.findAll();
-    }
-
     @PostConstruct
     public void init() {
         Iterable<Usuari> inicials = Arrays.asList(

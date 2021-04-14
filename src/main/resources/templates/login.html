@@ -2,8 +2,10 @@
 <html xmlns:th="https://www.thymeleaf.org">
 <head>
     <title>Login bàsic</title>
+    <link rel="stylesheet" href="" th:href="@{/css/estils.css}"/>
 </head>
-<body>
+<body class="container">
+<h2>Login</h2>
 <div th:if="${param.error}">
     Usuari i/o password incorrectes
 </div>
@@ -11,11 +13,13 @@
     T'has desconnectat
 </div>
 <form th:action="@{/login}" method="post">
-    <div><label> Nom Usuari : <input type="text" name="username"/> </label></div>
-    <div><label> Password: <input type="password" name="password"/> </label></div>
-    <div><input type="submit" value="Entrar (Sign in)"/></div>
+    <div class="marge"><label> <input type="text" name="username" placeholder="Nom Usuari"/> </label></div>
+    <div class="marge"><label> <input type="password" name="password" placeholder="Password"/> </label></div>
+    <div class="marge"><input class="boto" type="submit" value="Entrar (Sign in)"/></div>
 </form>
+
 <form th:action="@{/registre}" method="get">
+    <a>No tens usuari?</a>
     <input type="submit" value="Registrar-se"/>
 </form>
 

@@ -1,0 +1,29 @@
+body{
+    background: whitesmoke;
+    font-family: sans-serif;
+}
+.title{
+    margin-left: auto;
+    text-align: center;
+    font-size: xx-large;
+    text-transform: uppercase;
+    margin-top: 40px;
+    margin-bottom: 50px;
+}
+h2{
+    font-size: large;
+}
+.container{
+    margin-left: auto;
+    margin-right: auto;
+    width: 50em;
+    text-align: center;
+}
+.marge{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.boto{
+    background-color: aquamarine;
+    padding: 6px 12px;
+}

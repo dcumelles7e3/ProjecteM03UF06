@@ -2,17 +2,21 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Inici Aplicació</title>
+    <title>MTG Database</title>
+    <link rel="stylesheet" href="" th:href="@{/css/estils.css}"/>
 </head>
 <body>
-<a href="/empleats/new">Afegir empleats</a><br/>
-<a href="/cartes/list">Llistar empleats </a><br/>
-<a href="/empleats/listord">Llistar empleats per ordre alfabètic</a><br/>
-<form action="/empleats/consultaid" method="get">
-    <label> Consultar amb id
-        <input type="number" name="id" />
-    </label>
-</form>
-
+<h1 class="title">Benvingut/da a la base de dades de MTG!</br></h1>
+<div class="container">
+    <h2>Què vols fer?</h2>
+    <a href="/cartes/new">Afegir cartes</a><br/>
+    <a href="/cartes/list">Llistar cartes </a><br/>
+    <a href="/cartes/listord">Llistar cartes per ordre alfabètic</a><br/>
+    <form action="/cartes/consultaid" method="get">
+        <label> Consultar amb id
+            <input type="number" name="id"/>
+        </label>
+    </form>
+</div>
 </body>
 </html>
