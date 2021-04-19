@@ -39,23 +39,17 @@ public class ControladorCartes {
         return "redirect:/cartes/list";
     }
 
-    /*@PostMapping("/cartes/edit/submit")
+    @PostMapping("/cartes/edit/submit")
     public String editarSubmit(@ModelAttribute("cartaForm") Carta carta) {
-        servei.substituir(emp);
+        servei.substituir(carta);
         return "redirect:/cartes/list";
     }
 
     @GetMapping("/cartes/edit/{id}")
-    public String editarEmpleat(@PathVariable("id") int id, Model m) {
-        m.addAttribute("carteForm", servei.consultaPerId(id));
+    public String editarCarta(@PathVariable("id") int id, Model m) {
+        m.addAttribute("cartaForm", servei.findById(id));
         return "afegir";
     }
-
-    @GetMapping("/cartes/listord")
-    public String llistarOrdenat(Model m) {
-        m.addAttribute("llistaEmpleats", servei.llistatOrdenatPerNom());
-        return "llistat";
-    }*/
 
     @GetMapping("/cartes/consultaid")
     public String consultaPerId(@RequestParam("id") long id, Model m) {

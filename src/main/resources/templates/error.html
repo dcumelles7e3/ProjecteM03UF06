@@ -1,10 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
-<h1>Error! Comprova que tinguis autorització o que la pàgina existeixi.</h1>
+<span th:switch="${status}">
+    <span th:case="'404'">La pàgina no existeix!</span>
+    <span th:case="'403'">No tens permesa aquesta opció! <a href="/logout">Fes logout</a> </span>
+    <span th:case="*">
+            <a th:text="${status}" />
+    </span>
+</div>
 </body>
 </html>

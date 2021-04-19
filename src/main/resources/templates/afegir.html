@@ -11,11 +11,14 @@
     <!--si el id != 0 ja té valors, i envio per editar, modificar, substituir empleat -->
 
     <h1 th:text="${cartesForm.id!=0}?'Editar carta': 'Nou carta'">bla bla empleat</h1>
-    Id <input type="text" id="id" placeholder="1" th:field="*{id}" th:attrappend="readonly=${cartesForm.id!=0}?'readonly':null"><br/>
+   <!-- Id <input type="text" id="id" placeholder="1" th:field="*{id}" th:attrappend="readonly=${cartesForm.id!=0}?'readonly':null"><br/>-->
     Nom <input type="text" id="nom" placeholder="Nom" th:field="*{nom}"><br/>
-    Atk <input type="text" id="email" placeholder="a@a.com" th:field="*{atk}"><br/>
-    Hp <input type="text" id="telefon" placeholder="93123456" th:field="*{hp}"><br/>
-    Descripció <input type="checkbox" id="directiu" th:field="*{desc}"><br/>
+    Atk <input type="text" id="atk" placeholder="a@a.com" th:field="*{atk}"><br/>
+    Hp <input type="text" id="hp" placeholder="93123456" th:field="*{hp}"><br/>
+    Descripció <input type="text" id="desc" placeholder="93123456" th:field="*{desc}"><br/>
+    Expansió <input type="text" id="expansio" placeholder="93123456" th:field="*{expansio}"><br/>
+
+
     <button type="submit">Enviar</button>
 </form>
 <form th:action="@{/logout}" method="post">
