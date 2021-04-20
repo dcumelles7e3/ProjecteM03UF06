@@ -27,7 +27,7 @@ public class ConfiguracioSeguretatWeb extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()
-                .antMatchers("/", "/inici", "/css/**", "/h2-console/**", "/registre","/llistat").permitAll()
+                .antMatchers("/", "/index", "/css/**", "/h2-console/**", "/registre","/llistat").permitAll()
                 .antMatchers("/cartes/new","/cartes/eliminar").hasRole("admin")
                 .anyRequest().authenticated()
                 .and()

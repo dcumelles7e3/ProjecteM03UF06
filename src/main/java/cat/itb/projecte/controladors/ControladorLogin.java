@@ -17,7 +17,6 @@ public class ControladorLogin {
         return "login";
     }
 
-
     @GetMapping("/registre")
     public String afegirUsuari(Model m) {
         m.addAttribute("userForm", new Usuari());

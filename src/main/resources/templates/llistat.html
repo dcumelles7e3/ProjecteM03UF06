@@ -7,7 +7,7 @@
 </head>
 <body>
 
-<table class="taula">
+<table class="centrat">
     <thead>
     <tr>
         <th>ID</th>
@@ -34,9 +34,11 @@
 </table>
 
 
-<form th:action="@{/logout}" method="post">
-    <input class="boto" type="submit" value="Sortir (Sign Out)"/>
+<form class="centrat" th:action="@{/logout}" method="post">
+    <input class="boto centrat" type="submit" value="Sortir (Sign Out)"/><br/>
 </form>
-<a href="/">Tornar a l'inici</a><br/>
+<form class="centrat" action="/">
+    <input class="boto" type="submit" value="Tornar a l'inici"/>
+</form>
 </body>
 </html>

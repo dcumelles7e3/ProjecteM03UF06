@@ -28,10 +28,15 @@ h2{
     padding: 6px 12px;
 }
 .taula{
+    width: 70%;
+
+
+}
+.centrat{
     margin-left: auto;
     margin-right: auto;
-    width: 70%;
     text-align: center;
+
 }
 table, th, td {
     border: 1px solid black;

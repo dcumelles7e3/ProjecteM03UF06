@@ -8,9 +8,10 @@
 </head>
 <body>
 
-<form method="post" action="#" th:action="${cartaForm.id!=0} ?@{/cartes/edit/submit}:@{/cartes/new/submit}" th:object="${cartaForm}">
-    <h1 th:text="${cartaForm.id!=0}?'Editar carta': 'Nova carta'"></h1>
-    <table class="taula">
+<form class="centrat" method="post" action="#"
+      th:action="${cartaForm.id!=0} ?@{/cartes/edit/submit}:@{/cartes/new/submit}" th:object="${cartaForm}">
+    <h1 class="centrat" th:text="${cartaForm.id!=0}?'Editar carta': 'Nova carta'"></h1>
+    <table class="taula centrat">
         <thead>
         <tr>
             <th>ID</th>
@@ -19,22 +20,26 @@
             <th>Hp</th>
             <th>Descripció</th>
             <th>Expansió</th>
-
-        </tr></br>
+        </tr>
         </thead>
 
-    <tr>
-    <td><input type="text" id="id" placeholder="1" th:field="*{id}" th:attrappend="readonly=${cartaForm.id!=0}?'readonly':null"></td>
-    <td><input type="text" id="nom" placeholder="Nom" th:field="*{nom}"></td>
-        <td><input type="text" id="atk" placeholder="a@a.com" th:field="*{atk}"></td>
-        <td><input type="text" id="hp" placeholder="93123456" th:field="*{hp}"></td>
-        <td> <input type="text" id="desc" placeholder="93123456" th:field="*{desc}"></td>
-        <td> <input type="text" id="expansio" placeholder="93123456" th:field="*{expansio.nom}"></td>
-    </tr>
-    </table>
-    <button class="boto" type="submit">Enviar</button>
+        <tr>
+            <td><input type="text" id="id" placeholder="1" th:field="*{id}"
+                       th:attrappend="readonly=${cartaForm.id!=0}?'readonly':null"></td>
+            <td><input type="text" id="nom" placeholder="Nom" th:field="*{nom}"></td>
+            <td><input type="text" id="atk" placeholder="3" th:field="*{atk}"></td>
+            <td><input type="text" id="hp" placeholder="4" th:field="*{hp}"></td>
+            <td><input type="text" id="desc" placeholder="Descripció" th:field="*{desc}"></td>
+            <td><input type="text" id="expansio" placeholder="Nom expansió" th:field="*{expansio.nom}"></td>
+        </tr>
+    </table><br/>
+    <button class="boto" type="submit">Enviar</button><br/>
+    <br/>
 </form>
-<form th:action="@{/logout}" method="post">
+<form class="centrat" action="/">
+    <input class="boto" type="submit" value="Tornar a l'inici"/>
+</form>
+<form class="centrat" th:action="@{/logout}" method="post">
     <input class="boto" type="submit" value="Sortir (Sign Out)"/>
 </form>
 </body>
