@@ -13,7 +13,7 @@ import java.io.Serializable;
 @Entity
 @Table(name = "cartes")
 public class Carta implements Serializable {
-    @Id @GeneratedValue
+    @Id @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
     private String nom;
     private int hp;

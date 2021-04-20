@@ -1,7 +1,6 @@
 package cat.itb.projecte.model.serveis;
 
 import cat.itb.projecte.model.entitats.Carta;
-import cat.itb.projecte.model.entitats.Empleat;
 import cat.itb.projecte.model.entitats.Expansio;
 import cat.itb.projecte.model.entitats.Usuari;
 import cat.itb.projecte.repositoris.RepositoriCartes;
@@ -46,5 +45,6 @@ public class ServeiCartes {
 
     public void substituir(Carta c) {
         repositori.save(c);
+
     }
 }

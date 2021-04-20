@@ -1,28 +1,41 @@
 <!DOCTYPE html>
 <html xmlns:th="https://www.thymeleaf.org">
+
 <head>
     <meta charset="UTF-8">
     <title>Afegir Carta</title>
+    <link rel="stylesheet" href="" th:href="@{/css/estils.css}"/>
 </head>
 <body>
-<!--<form method="post" action="#" th:action="@{/empleats/new/submit}" th:object="${empleatForm}">-->
-<form method="post" action="#" th:action="${cartesForm.id!=0} ?@{/cartes/edit/submit}:@{/cartes/new/submit}" th:object="${cartesForm}">
-    <!-- si el id == 0 és la primera vegada que utilitzo el form, per tant new Empleat -->
-    <!--si el id != 0 ja té valors, i envio per editar, modificar, substituir empleat -->
 
-    <h1 th:text="${cartesForm.id!=0}?'Editar carta': 'Nou carta'">bla bla empleat</h1>
-   <!-- Id <input type="text" id="id" placeholder="1" th:field="*{id}" th:attrappend="readonly=${cartesForm.id!=0}?'readonly':null"><br/>-->
-    Nom <input type="text" id="nom" placeholder="Nom" th:field="*{nom}"><br/>
-    Atk <input type="text" id="atk" placeholder="a@a.com" th:field="*{atk}"><br/>
-    Hp <input type="text" id="hp" placeholder="93123456" th:field="*{hp}"><br/>
-    Descripció <input type="text" id="desc" placeholder="93123456" th:field="*{desc}"><br/>
-    Expansió <input type="text" id="expansio" placeholder="93123456" th:field="*{expansio}"><br/>
+<form method="post" action="#" th:action="${cartaForm.id!=0} ?@{/cartes/edit/submit}:@{/cartes/new/submit}" th:object="${cartaForm}">
+    <h1 th:text="${cartaForm.id!=0}?'Editar carta': 'Nova carta'"></h1>
+    <table class="taula">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nom</th>
+            <th>Atk</th>
+            <th>Hp</th>
+            <th>Descripció</th>
+            <th>Expansió</th>
 
+        </tr></br>
+        </thead>
 
-    <button type="submit">Enviar</button>
+    <tr>
+    <td><input type="text" id="id" placeholder="1" th:field="*{id}" th:attrappend="readonly=${cartaForm.id!=0}?'readonly':null"></td>
+    <td><input type="text" id="nom" placeholder="Nom" th:field="*{nom}"></td>
+        <td><input type="text" id="atk" placeholder="a@a.com" th:field="*{atk}"></td>
+        <td><input type="text" id="hp" placeholder="93123456" th:field="*{hp}"></td>
+        <td> <input type="text" id="desc" placeholder="93123456" th:field="*{desc}"></td>
+        <td> <input type="text" id="expansio" placeholder="93123456" th:field="*{expansio.nom}"></td>
+    </tr>
+    </table>
+    <button class="boto" type="submit">Enviar</button>
 </form>
 <form th:action="@{/logout}" method="post">
-    <input type="submit" value="Sortir (Sign Out)"/>
+    <input class="boto" type="submit" value="Sortir (Sign Out)"/>
 </form>
 </body>
 </html>

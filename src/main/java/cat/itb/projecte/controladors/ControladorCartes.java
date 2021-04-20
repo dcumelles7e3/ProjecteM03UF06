@@ -1,10 +1,7 @@
 package cat.itb.projecte.controladors;
 
 import cat.itb.projecte.model.entitats.Carta;
-import cat.itb.projecte.model.entitats.Empleat;
 import cat.itb.projecte.model.serveis.ServeiCartes;
-import cat.itb.projecte.model.serveis.ServeiEmpleats;
-import cat.itb.projecte.model.serveis.ServeiUsuaris;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -23,7 +20,7 @@ public class ControladorCartes {
 
     @GetMapping("/cartes/new")
     public String afegirCarta(Model m) {
-        m.addAttribute("cartesForm", new Carta());
+        m.addAttribute("cartaForm", new Carta());
         return "afegir";
     }
 
