@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="" th:href="@{/css/estils.css}"/>
 </head>
 <body>
-
+<h1 class="centrat">Llistat</h1>
 <table class="centrat">
     <thead>
     <tr>
@@ -18,7 +18,6 @@
         <th>Expansió</th>
         <th>Editar</th>
         <th>Eliminar</th>
-
     </tr></br>
     </thead>
     <tr th:each="carta : ${llistaCartes}">
@@ -28,15 +27,15 @@
         <td th:text="${carta.hp}">Valor vida</td>
         <td th:text="${carta.desc}">Descripció</td>
         <td th:text="${carta.expansio.nom}">Expansió</td>
-        <td><a th:href="@{/cartes/edit/{id}(id=${carta.id})}">Editar</a> </td>
-        <td><a th:href="@{/cartes/eliminar(id=${carta.id})}">Eliminar</a> </td><br/>
+        <td><a th:href="@{/cartes/edit/{id}(id=${carta.id})}">Editar</a></td>
+        <td><a th:href="@{/cartes/eliminar(id=${carta.id})}">Eliminar</a></td>
     </tr>
 </table>
-
-
+<br/>
 <form class="centrat" th:action="@{/logout}" method="post">
     <input class="boto centrat" type="submit" value="Sortir (Sign Out)"/><br/>
 </form>
+<br/>
 <form class="centrat" action="/">
     <input class="boto" type="submit" value="Tornar a l'inici"/>
 </form>

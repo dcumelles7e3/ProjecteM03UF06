@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="https://www.thymeleaf.org">
 <head>
-    <title>Login bàsic</title>
+    <title>Login MTG</title>
     <link rel="stylesheet" href="" th:href="@{/css/estils.css}"/>
 </head>
 <body class="container">
@@ -17,10 +17,10 @@
     <div class="marge"><label> <input type="password" name="password" placeholder="Password"/> </label></div>
     <div class="marge"><input class="boto" type="submit" value="Entrar (Sign in)"/></div>
 </form>
-
+<br/>
 <form th:action="@{/registre}" method="get">
-    <a>No tens usuari?</a>
-    <input type="submit" value="Registrar-se"/>
+    <a>No tens usuari?</a><br/>
+    <input class="boto" type="submit" value="Registrar-se"/>
 </form>
 
 </body>

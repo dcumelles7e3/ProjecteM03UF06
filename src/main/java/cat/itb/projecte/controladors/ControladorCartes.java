@@ -18,6 +18,12 @@ public class ControladorCartes {
         return "llistat";
     }
 
+    @GetMapping("/cartes/listord")
+    public String llistarOrdenatExpansio(Model m) {
+        m.addAttribute("llistaCartes", servei.findSortExpansio());
+        return "llistat";
+    }
+
     @GetMapping("/cartes/new")
     public String afegirCarta(Model m) {
         m.addAttribute("cartaForm", new Carta());
@@ -53,4 +59,5 @@ public class ControladorCartes {
         m.addAttribute("llistaCartes", servei.findById(id));
         return "llistat";
     }
+
 }

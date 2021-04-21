@@ -14,7 +14,7 @@ import java.util.Set;
 @NoArgsConstructor
 @Entity
 @Table(name = "expansions")
-public class Expansio implements Serializable {
+public class Expansio implements Serializable{
     @Id @GeneratedValue
     private long id;
     private String nom;
