@@ -2,11 +2,11 @@
 <html xmlns:th="https://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Llistat</title>
+    <title>Llistat Cartes</title>
     <link rel="stylesheet" href="" th:href="@{/css/estils.css}"/>
 </head>
 <body>
-<h1 class="centrat">Llistat</h1>
+<h1 class="centrat">Cartes</h1>
 <table class="centrat">
     <thead>
     <tr>
@@ -25,19 +25,19 @@
         <td th:text="${carta.nom}">Nom de la carta</td>
         <td th:text="${carta.atk}">Valor d'atac</td>
         <td th:text="${carta.hp}">Valor vida</td>
-        <td th:text="${carta.desc}">Descripció</td>
+        <td th:text="${carta.descr}">Descripció</td>
         <td th:text="${carta.expansio.nom}">Expansió</td>
         <td><a th:href="@{/cartes/edit/{id}(id=${carta.id})}">Editar</a></td>
         <td><a th:href="@{/cartes/eliminar(id=${carta.id})}">Eliminar</a></td>
     </tr>
 </table>
 <br/>
-<form class="centrat" th:action="@{/logout}" method="post">
-    <input class="boto centrat" type="submit" value="Sortir (Sign Out)"/><br/>
-</form>
-<br/>
 <form class="centrat" action="/">
     <input class="boto" type="submit" value="Tornar a l'inici"/>
+</form>
+<br/>
+<form class="centrat" th:action="@{/logout}" method="post">
+    <input class="boto centrat" type="submit" value="Sortir (Sign Out)"/><br/>
 </form>
 </body>
 </html>

@@ -17,10 +17,15 @@ public class ControladorCartes {
         m.addAttribute("llistaCartes", servei.llistat());
         return "llistat";
     }
+    @GetMapping("/cartes/listExpansions")
+    public String llistarExpansions(Model m) {
+        m.addAttribute("llistaExpansions", servei.llistatExpansions());
+        return "llistat_expansions";
+    }
 
     @GetMapping("/cartes/listord")
     public String llistarOrdenatExpansio(Model m) {
-        m.addAttribute("llistaCartes", servei.findSortExpansio());
+        m.addAttribute("llistaCartes", servei.findSortAtk());
         return "llistat";
     }
 
@@ -40,6 +45,12 @@ public class ControladorCartes {
     public String eliminarCarta(@RequestParam("id") long id) {
         servei.eliminarPerId(id);
         return "redirect:/cartes/list";
+    }
+
+    @GetMapping("/cartes/eliminarExp")
+    public String eliminarExp(@RequestParam("id") long id) {
+        servei.eliminarExpPerId(id);
+        return "redirect:/cartes/listExpansions";
     }
 
     @PostMapping("/cartes/edit/submit")

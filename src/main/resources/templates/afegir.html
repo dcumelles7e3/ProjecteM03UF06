@@ -29,7 +29,7 @@
             <td><input type="text" id="nom" placeholder="Nom" th:field="*{nom}"></td>
             <td><input type="text" id="atk" placeholder="3" th:field="*{atk}"></td>
             <td><input type="text" id="hp" placeholder="4" th:field="*{hp}"></td>
-            <td><input type="text" id="desc" placeholder="Descripció" th:field="*{desc}"></td>
+            <td><input type="text" id="desc" placeholder="Descripció" th:field="*{descr}"></td>
             <td><input type="text" id="expansio" placeholder="Nom expansió" th:field="*{expansio.nom}"></td>
         </tr>
     </table><br/>
@@ -39,8 +39,9 @@
 <form class="centrat" action="/">
     <input class="boto" type="submit" value="Tornar a l'inici"/>
 </form>
+<br/>
 <form class="centrat" th:action="@{/logout}" method="post">
-    <input class="boto" type="submit" value="Sortir (Sign Out)"/>
+    <input class="boto centrat" type="submit" value="Sortir (Sign Out)"/><br/>
 </form>
 </body>
 </html>
