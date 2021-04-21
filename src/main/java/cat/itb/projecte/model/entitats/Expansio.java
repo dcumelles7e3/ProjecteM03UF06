@@ -15,7 +15,7 @@ import java.util.Set;
 @Entity
 @Table(name = "expansions")
 public class Expansio implements Serializable{
-    @Id @GeneratedValue
+    @Id @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
     private String nom;
     @OneToMany(mappedBy = "expansio")

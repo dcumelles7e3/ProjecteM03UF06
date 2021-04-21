@@ -32,8 +32,8 @@ public class ServeiCartes {
         Expansio coreset = new Expansio("Core Set 2020");
         List<Carta> inicials = Arrays.asList(
                 new Carta("Elfos de Llanowar",1,1,"Ekisde",ravnica),
-                new Carta("Engendro del Caos",4,4,"Vuela, arrolla.",ravnica),
-                new Carta("Apóstol de la luz",1,2,"Protección contra negro",coreset),
+                new Carta("Engendro del Caos",4,4,"Vuela, arrolla",ravnica),
+                new Carta("Apóstol de la luz",1,2,"Proteccion",coreset),
                 new Carta("Recaudador de diezmos",1,2,"Ultratumba 1",ravnica),
                 new Carta("Ángel de la vitalidad",2,2,"Vuela",coreset)
         );

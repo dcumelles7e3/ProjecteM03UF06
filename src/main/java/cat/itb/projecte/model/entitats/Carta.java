@@ -20,6 +20,7 @@ public class Carta implements Serializable {
     private int atk;
     private String desc;
     @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "expansio_id", referencedColumnName = "id")
     private Expansio expansio;
 
     public Carta(String nom, int hp, int atk, String desc, Expansio expansio) {
