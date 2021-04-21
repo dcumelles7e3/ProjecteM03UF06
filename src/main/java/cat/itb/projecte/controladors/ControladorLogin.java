@@ -17,6 +17,11 @@ public class ControladorLogin {
         return "login";
     }
 
+    @GetMapping("/")
+    public String index(){
+        return "index";
+    }
+
     @GetMapping("/registre")
     public String afegirUsuari(Model m) {
         m.addAttribute("userForm", new Usuari());
