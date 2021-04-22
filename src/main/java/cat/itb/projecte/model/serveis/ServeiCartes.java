@@ -39,7 +39,6 @@ public class ServeiCartes {
         Expansio ravnica = new Expansio("Ravnica");
         Expansio coreset = new Expansio("Core Set 2020");
 
-
         List<Carta> inicials = Arrays.asList(
                 new Carta("Elfos de Llanowar",1,1,"Ekisde",ravnica),
                 new Carta("Engendro del Caos",4,4,"Vuela, arrolla",ravnica),

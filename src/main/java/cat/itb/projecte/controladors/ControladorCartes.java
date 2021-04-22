@@ -24,8 +24,13 @@ public class ControladorCartes {
     }
 
     @GetMapping("/cartes/listord")
-    public String llistarOrdenatExpansio(Model m) {
+    public String llistarOrdenatAtk(Model m) {
         m.addAttribute("llistaCartes", servei.findSortAtk());
+        return "llistat";
+    }
+    @GetMapping("/cartes/listordexp")
+    public String llistarOrdenatExp(Model m) {
+        m.addAttribute("llistaCartes", servei.findSortExpansio());
         return "llistat";
     }
 
