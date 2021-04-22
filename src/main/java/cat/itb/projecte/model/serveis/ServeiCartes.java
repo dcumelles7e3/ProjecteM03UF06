@@ -51,8 +51,8 @@ public class ServeiCartes {
         repositori.saveAll(inicials);
     }
 
-    public List<Carta> findSortExpansio(){
-        return repositori.findAllByOrderByExpansioDescNomAsc();
+    public List<Carta> findSortHp(){
+        return repositori.findAllByOrderByHpAsc();
     }
     public List<Carta> findSortAtk(){
         return repositori.findAllByOrderByAtkAsc();

@@ -9,6 +9,6 @@ import org.springframework.data.repository.Repository;
 import java.util.List;
 
 public interface RepositoriCartes extends JpaRepository<Carta,Long> {
-    public List<Carta> findAllByOrderByExpansioDescNomAsc();
+    public List<Carta> findAllByOrderByHpAsc();
     public List<Carta> findAllByOrderByAtkAsc();
 }

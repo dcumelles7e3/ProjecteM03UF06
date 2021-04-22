@@ -28,9 +28,9 @@ public class ControladorCartes {
         m.addAttribute("llistaCartes", servei.findSortAtk());
         return "llistat";
     }
-    @GetMapping("/cartes/listordexp")
+    @GetMapping("/cartes/listordhp")
     public String llistarOrdenatExp(Model m) {
-        m.addAttribute("llistaCartes", servei.findSortExpansio());
+        m.addAttribute("llistaCartes", servei.findSortHp());
         return "llistat";
     }
 
